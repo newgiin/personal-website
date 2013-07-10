@@ -1,0 +1,25 @@
+.banner {
+	border-bottom-style:solid;
+    border-bottom-width:5px;	
+}
+
+a:link.no-decor,a:visited.no-decor {
+	text-decoration:none;
+	color:#000;
+}
+
+ul.no-bullet {
+    list-style-type: none;
+}
+
+li {
+	padding:1px 0px;
+}
+
+#main {
+   margin: 50px;
+}
+
+#content {
+   padding: 20px 0px;	
+}
