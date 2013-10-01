@@ -7,6 +7,10 @@ threadsafe: true
 default_expiration: "10m"
 
 handlers:
+# Dynamically generated pages
+- url: /books.html
+  script: gen.books.app
+
 - url: /(.*\.(appcache|manifest))
   mime_type: text/cache-manifest
   static_files: static/\1
@@ -41,7 +45,7 @@ handlers:
  
 - url: /(.*\.html)
   mime_type: text/html
-  static_files: static/\1
+  static_files: static/html/\1
   upload: static/(.*\.html)
   expiration: "1h"
  
@@ -182,9 +186,10 @@ handlers:
  
 # site root
 - url: /
-  static_files: static/index.html
-  upload: static/index.html
+  static_files: static/html/index.html
+  upload: static/html/index.html
   expiration: "15m"
+
 
 libraries:
 - name: webapp2

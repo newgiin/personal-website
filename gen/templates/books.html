@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+       <title>Books</title>
+       <link rel="stylesheet" type="text/css" href="css/site.css" />
+        <style>
+            .title {
+                font-style:italic
+            } 
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <div class="banner">
+               <a class="no-decor" href="/"><h1>Books</h1></a>
+            </div>
+            <div id="content">
+                List generated from my <a href="http://www.goodreads.com">goodreads</a> profile.
+                <br/><br/>
+                Read:
+                <ul>
+                {% for book in books_read %}
+                    <li><span class="title">{{ book.title }}</span> - <span class="author">{{ book.author }}</span></li>
+                {% endfor %}
+                </ul>
+                Currently Reading:
+                <ul>
+                {% for book in books_reading %}
+                    <li><span class="title">{{ book.title }}</span> - <span class="author">{{ book.author }}</span></li>
+                {% endfor %}
+                </ul>
+                To Read:
+                <ul>
+                {% for book in books_to_read %}
+                    <li><span class="title">{{ book.title }}</span> - <span class="author">{{ book.author }}</span></li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+   </body>
+</html>
