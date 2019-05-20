@@ -9,183 +9,218 @@ default_expiration: "10m"
 handlers:
 # Dynamically generated pages
 - url: /books.html
+  secure: always
   script: gen.books.app
 
 - url: /(.*\.(appcache|manifest))
+  secure: always
   mime_type: text/cache-manifest
   static_files: static/\1
   upload: static/(.*\.(appcache|manifest))
   expiration: "0m"
 
 - url: /(.*\.atom)
+  secure: always
   mime_type: application/atom+xml
   static_files: static/\1
   upload: static/(.*\.atom)
   expiration: "1h"
 
 - url: /(.*\.crx)
+  secure: always
   mime_type: application/x-chrome-extension
   static_files: static/\1
   upload: static/(.*\.crx)
 
 - url: /(.*\.css)
+  secure: always
   mime_type: text/css
   static_files: static/\1
   upload: static/(.*\.css)
 
 - url: /(.*\.eot)
+  secure: always
   mime_type: application/vnd.ms-fontobject
   static_files: static/\1
   upload: static/(.*\.eot)
 
 - url: /(.*\.htc)
+  secure: always
   mime_type: text/x-component
   static_files: static/\1
   upload: static/(.*\.htc)
 
 - url: /(.*\.html)
+  secure: always
   mime_type: text/html
   static_files: static/html/\1
   upload: static/(.*\.html)
   expiration: "1h"
 
 - url: /(.*\.ico)
+  secure: always
   mime_type: image/x-icon
   static_files: static/\1
   upload: static/(.*\.ico)
   expiration: "7d"
 
 - url: /(.*\.js)
+  secure: always
   mime_type: text/javascript
   static_files: static/\1
   upload: static/(.*\.js)
 
 - url: /(.*\.json)
+  secure: always
   mime_type: application/json
   static_files: static/\1
   upload: static/(.*\.json)
   expiration: "1h"
 
 - url: /(.*\.m4v)
+  secure: always
   mime_type: video/m4v
   static_files: static/\1
   upload: static/(.*\.m4v)
 
 - url: /(.*\.mp4)
+  secure: always
   mime_type: video/mp4
   static_files: static/\1
   upload: static/(.*\.mp4)
 
 - url: /(.*\.(ogg|oga))
+  secure: always
   mime_type: audio/ogg
   static_files: static/\1
   upload: static/(.*\.(ogg|oga))
 
 - url: /(.*\.ogv)
+  secure: always
   mime_type: video/ogg
   static_files: static/\1
   upload: static/(.*\.ogv)
 
 - url: /(.*\.otf)
+  secure: always
   mime_type: font/opentype
   static_files: static/\1
   upload: static/(.*\.otf)
 
 - url: /(.*\.rss)
+  secure: always
   mime_type: application/rss+xml
   static_files: static/\1
   upload: static/(.*\.rss)
   expiration: "1h"
 
 - url: /(.*\.safariextz)
+  secure: always
   mime_type: application/octet-stream
   static_files: static/\1
   upload: static/(.*\.safariextz)
 
 - url: /(.*\.(svg|svgz))
+  secure: always
   mime_type: images/svg+xml
   static_files: static/\1
   upload: static/(.*\.(svg|svgz))
 
 - url: /(.*\.swf)
+  secure: always
   mime_type: application/x-shockwave-flash
   static_files: static/\1
   upload: static/(.*\.swf)
 
 - url: /(.*\.ttf)
+  secure: always
   mime_type: font/truetype
   static_files: static/\1
   upload: static/(.*\.ttf)
 
 - url: /(.*\.txt)
+  secure: always
   mime_type: text/plain
   static_files: static/\1
   upload: static/(.*\.txt)
 
 - url: /(.*\.unity3d)
+  secure: always
   mime_type: application/vnd.unity
   static_files: static/\1
   upload: static/(.*\.unity3d)
 
 - url: /(.*\.webm)
+  secure: always
   mime_type: video/webm
   static_files: static/\1
   upload: static/(.*\.webm)
 
 - url: /(.*\.webp)
+  secure: always
   mime_type: image/webp
   static_files: static/\1
   upload: static/(.*\.webp)
 
 - url: /(.*\.woff)
+  secure: always
   mime_type: application/x-font-woff
   static_files: static/\1
   upload: static/(.*\.woff)
 
 - url: /(.*\.xml)
+  secure: always
   mime_type: application/xml
   static_files: static/\1
   upload: static/(.*\.xml)
   expiration: "1h"
 
 - url: /(.*\.xpi)
+  secure: always
   mime_type: application/x-xpinstall
   static_files: static/\1
   upload: static/(.*\.xpi)
 
 # image files
 - url: /(.*\.(bmp|gif|ico|jpeg|jpg|png))
+  secure: always
   static_files: static/\1
   upload: static/(.*\.(bmp|gif|ico|jpeg|jpg|png))
 
 # audio files
 - url: /(.*\.(mid|midi|mp3|wav))
+  secure: always
   static_files: static/\1
   upload: static/(.*\.(mid|midi|mp3|wav))
 
 # windows files
 - url: /(.*\.(doc|exe|ppt|rtf|xls))
+  secure: always
   static_files: static/\1
   upload: static/(.*\.(doc|exe|ppt|rtf|xls))
 
 # compressed files
 - url: /(.*\.(bz2|gz|rar|tar|tgz|zip))
+  secure: always
   static_files: static/\1
   upload: static/(.*\.(bz2|gz|rar|tar|tgz|zip))
 
 # index files
 - url: /(.+)/
+  secure: always
   static_files: static/\1/index.html
   upload: static/(.+)/index.html
   expiration: "15m"
 
 - url: /(.+)
+  secure: always
   static_files: static/\1/index.html
   upload: static/(.+)/index.html
   expiration: "15m"
 
 # site root
 - url: /
+  secure: always
   static_files: static/html/index.html
   upload: static/html/index.html
   expiration: "15m"
